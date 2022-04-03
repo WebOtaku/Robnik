@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Robnik
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyMove : MonoBehaviour
     {
+        [SerializeField]
+        private UnityEvent OnCheckPoint;
         private const float Speed = 5.0f;
         [SerializeField]
         private Path _path;
@@ -29,6 +32,7 @@ namespace Robnik
                 if (_index < _path.Points.Count - 1)
                 {
                     _index++;
+                    OnCheckPoint.Invoke();
                 }
                 else
                 {

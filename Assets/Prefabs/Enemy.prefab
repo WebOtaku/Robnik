@@ -13,7 +13,11 @@ GameObject:
   - component: {fileID: 4972145735634963083}
   - component: {fileID: 1169394857855850716}
   - component: {fileID: -7729233075081605222}
-  m_Layer: 0
+  - component: {fileID: 852282329508729763}
+  - component: {fileID: 1190803744451833251}
+  - component: {fileID: 2228896222997173269}
+  - component: {fileID: -8317717308815150143}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +34,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8447785563555056231}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c90eef982c8fa964ab9d06d337b015ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,6 +102,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452f73e73c54ba04a9aa4a4a323925db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCheckPoint:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8447785563555056228}
+        m_TargetAssemblyTypeName: Robnik.CannonSingle, Assembly-CSharp
+        m_MethodName: Shot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _path: {fileID: 11400000, guid: cce537d4e245ccf4c90e37b17ffda149, type: 2}
 --- !u!50 &1169394857855850716
 Rigidbody2D:
@@ -145,3 +165,189 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
+--- !u!114 &852282329508729763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900164372294404932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9135c338beb195b4fa4b3a1132ae412d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 200
+  OnEndedHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1190803744451833251}
+        m_TargetAssemblyTypeName: Robnik.EnemyDesctruction, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2228896222997173269}
+        m_TargetAssemblyTypeName: Robnik.DestroyEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4972145735634963083}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7729233075081605222}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -8317717308815150143}
+        m_TargetAssemblyTypeName: Robnik.ObjectScore, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1190803744451833251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900164372294404932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673d290d1a1b9ae4f98a7fb96342b785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2228896222997173269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900164372294404932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c008cba472aa23740bc688fffe409d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8317717308815150143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900164372294404932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a090dd2436c2b7c49bae27ae2a5bfcdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 120
+--- !u!1001 &3418977671999886166
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3900164372294404934}
+    m_Modifications:
+    - target: {fileID: 6507198032140097840, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_Name
+      value: EnemyCannonSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+--- !u!4 &8447785563555056231 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6507198032140097841, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+  m_PrefabInstance: {fileID: 3418977671999886166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8447785563555056228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6507198032140097842, guid: 28056dc8f26774648b54367862a1ec4b, type: 3}
+  m_PrefabInstance: {fileID: 3418977671999886166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935e34a5bcfbc1a44b59908fea47d70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

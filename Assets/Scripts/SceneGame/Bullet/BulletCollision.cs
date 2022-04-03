@@ -8,11 +8,16 @@ namespace Robnik
     [RequireComponent(typeof(CapsuleCollider2D))]
     public class BulletCollision : MonoBehaviour
     {
+        [SerializeField, Range(100, 500)]
+        private int _damage = 150;
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            // TODO: damage enemy
-            if (collision.gameObject.name != "Player")
-                ResetObject();
+            if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+                damageable.TakeDamage(_damage);
+
+            //if (collision.gameObject.name != "Player")
+            ResetObject();
         }
 
         private void ResetObject()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 339062555353163289}
   - component: {fileID: 339062555353163290}
   - component: {fileID: 8902504374987534537}
+  - component: {fileID: 8482737649572614184}
   m_Layer: 0
   m_Name: PlayerCannonSingle
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935e34a5bcfbc1a44b59908fea47d70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 8916950053091265535, guid: 3e91ac1379a65004398099a9c209284d, type: 3}
+  _bulletPrefab: {fileID: 7241533381582755299, guid: f39c913ed1755ba4a80c56c3e91e2c31, type: 3}
   _bulletCount: 15
   _bulletStartPosition: {fileID: 339062556975841938}
 --- !u!114 &8902504374987534537
@@ -64,9 +65,37 @@ MonoBehaviour:
   Action:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8482737649572614184}
+        m_TargetAssemblyTypeName: Robnik.ShotTimer, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8482737649572614184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339062555353163288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe055d0b0c5a2964aaa5580cdb7dbfc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shotInterval: 0.5
+  OnShot:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 339062555353163290}
-        m_TargetAssemblyTypeName: Robnik.PlayerCannonBase, Assembly-CSharp
-        m_MethodName: Activate
+        m_TargetAssemblyTypeName: Robnik.CannonSingle, Assembly-CSharp
+        m_MethodName: Shot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

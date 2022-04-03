@@ -13,8 +13,8 @@ TagManager:
   - UI
   - PlayZoneBorder
   - Enemy
-  - Bullet
-  - 
+  - PlayerBullet
+  - EnemyBullet
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effects
+    uniqueID: 2220616231
     locked: 0
