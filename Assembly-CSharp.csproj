@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Bullet\IDamageable.cs" />
+     <Compile Include="Assets\Scripts\Effects\DestroyEffectGenerator.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
      <Compile Include="Assets\Scripts\Data\LevelNameData.cs" />
      <Compile Include="Assets\Scripts\SceneGame\PlayZone\BorderVerticalPosition.cs" />
@@ -46,9 +47,12 @@
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
      <Compile Include="Assets\Scripts\Tools\CameraWidth.cs" />
      <Compile Include="Assets\Scripts\SceneLoader\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\SceneGame\UIScore.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Weapon\CannonBase.cs" />
+     <Compile Include="Assets\Scripts\SceneGame\ObjectScore.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Enemy\EnemyDesctruction.cs" />
      <Compile Include="Assets\Scripts\EventSystem\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\Effects\DestroyEffect.cs" />
      <Compile Include="Assets\Scripts\Data\Path.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Player\PlayerStartPosition.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
@@ -62,6 +66,7 @@
      <Compile Include="Assets\Scripts\Data\SafeAreaData.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Scripts\SceneGame\ObjectHealth.cs" />
+     <Compile Include="Assets\Scripts\SceneGame\ScoreCollector.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Player\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Bullet\BulletCollision.cs" />
      <Compile Include="Assets\Scripts\SceneLoader\SaveSafeArea.cs" />
@@ -69,18 +74,16 @@
      <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Enemy\EnemyWaves.cs" />
      <Compile Include="Assets\Scripts\SceneGame\ScenePath.cs" />
+     <Compile Include="Assets\Scripts\Effects\DestroyEffectSpawner.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Weapon\CannonSingle.cs" />
      <Compile Include="Assets\Scripts\SceneMap\BackgroundImages.cs" />
      <Compile Include="Assets\Scripts\Data\LevelData.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Bullet\BulletMove.cs" />
      <Compile Include="Assets\Scripts\SceneLoader\PanelSize.cs" />
      <Compile Include="Assets\Scripts\SceneGame\Player\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\Effects\DestroyEffect.cs" />
-     <Compile Include="Assets\Scripts\Effects\DestroyEffectSpawner.cs" />
-     <Compile Include="Assets\Scripts\Effects\DestroyEffectGenerator.cs" />
-     <Compile Include="Assets\Scripts\SceneGame\ScoreCollector.cs" />
-     <Compile Include="Assets\Scripts\SceneGame\ObjectScore.cs" />
-     <Compile Include="Assets\Scripts\SceneGame\UIScore.cs" />
+     <Compile Include="Assets\Scripts\SceneMenu\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\SceneMenu\UpgradeMenu.cs" />
+     <Compile Include="Assets\Scripts\SceneMenu\SettingsMenu.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
