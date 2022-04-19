@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Robnik
 {
-    public class EnemyDesctruction : MonoBehaviour
+    public class EnemyDestruction : MonoBehaviour
     {
         public void Activate()
         {
